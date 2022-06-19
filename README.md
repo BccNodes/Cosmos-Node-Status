@@ -8,12 +8,17 @@ Talimatlar:
 1. `@BotFather` ile telegram botu oluşturun, özelleştirin ve `get bot API token` ([nasıl yapılacağını bilmiyorsanız](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token)).
 
 2.En az 2 grup oluşturun: `alarm` and `log`. Bunları özelleştirin, botunuzu sohbetlerinize ekleyin ve `get chats IDs` ([nasıl yapılacağını bilmiyorsanız](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)).
+
 3. Sunucunuza bağlanın ve `mkdir $HOME/status/` ile `status` klasörü oluşturun.
+
 4. Bu klasörde `cosmos.sh` dosyası oluşturmanız gerekir; `nano $HOME/status/cosmos.sh`. Herhangi bir değişiklik yapmanıza gerek yoktur `cosmos.sh` dosyası kullanıma hazırdır.
 >  `cosmos.sh` dosyasını repolarda bulabilirsiniz.
+
 5. Düğüm bilgilerimizi tanımlamak için `cosmos.conf` dosyasına ihtiyacımız var; `nano $HOME/status/cosmos.conf` . Dosya içindeki bilgileri özelleştiriniz.
 > `cosmos.conf.ornek` dosyasını repolarda bulabilirsiniz ve `curl.md` repolardadır.
+
 6. `jq` ve `bc` paketlerini kurunuz; `sudo apt-get install jq bc -y` .
+
 7. Status klasörünüzün içine girip, ayarlarınızı görmek için `bash cosmos.sh` komutunu çalıştırın. Her şey doğru ise çıktı aşağıdaki gibi veya benzer olmalıdır: 
 
 ```
