@@ -43,8 +43,8 @@ root@v1131623:~/status#
 ```
 
 8. `slash.sh` dosyamızı oluşturalım; `nano $HOME/status/slash.sh` .
-> `slash.sh.example` dosyasını repolarda bulabilirsiniz.
+> `slash.sh.ornek` dosyasını repolarda bulabilirsiniz.
 9. Bazı kurallar ekleyin; `chmod u+x cosmos.sh slash.sh`.
 10. Crontab'ı düzenleyin (1 numaralı seçeneği seçiyoruz); `crontab -e`.
-> `crontab.example` repolarda bulabilirsiniz.
+> `crontab.ornek` repolarda bulabilirsiniz.
 11. Günlüklerinizi `cat $HOME/status/cosmos.log` veya `tail $HOME/status/cosmos.log -f` ile kontrol edebilirsiniz.
