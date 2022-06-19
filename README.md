@@ -1,6 +1,6 @@
 # Cosmos-Node-Status
 
-# status
+# düğüm durumu
 Bu sistem sizi jail veya inaktif durum hakkında telegram üzerinden uyaracaktır. Ayrıca size her saat başı node durumunuz hakkında kısa bilgi gönderir.
 
 Talimatlar:
