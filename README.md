@@ -12,10 +12,10 @@ Talimatlar:
 3. Sunucunuza bağlanın ve `mkdir $HOME/status/` ile `status` klasörü oluşturun.
 
 4. Bu klasörde `cosmos.sh` dosyası oluşturmanız gerekir; `nano $HOME/status/cosmos.sh`. Herhangi bir değişiklik yapmanıza gerek yoktur `cosmos.sh` dosyası kullanıma hazırdır.
->  `cosmos.sh` dosyasını repolarda bulabilirsiniz.
+> Bu depoda `cosmos.sh` dosyasını bulabilirsiniz.
 
 5. Düğüm bilgilerimizi tanımlamak için `cosmos.conf` dosyasına ihtiyacımız var; `nano $HOME/status/cosmos.conf` . Dosya içindeki bilgileri özelleştiriniz.
-> `cosmos.conf.ornek` dosyasını repolarda bulabilirsiniz ve `curl.md` repolardadır.
+> `cosmos.conf.ornek` ve `curl.md` dosyalarını bu depoda bulabilirsiniz.
 
 6. `jq` ve `bc` paketlerini kurunuz; `sudo apt-get install jq bc -y` .
 
@@ -43,8 +43,8 @@ root@v1131623:~/status#
 ```
 
 8. `slash.sh` dosyamızı oluşturalım; `nano $HOME/status/slash.sh` .
-> `slash.sh.ornek` dosyasını repolarda bulabilirsiniz.
+> Bu depoda `slash.sh.ornek` dosyasını bulabilirsiniz.
 9. Bazı kurallar ekleyin; `chmod u+x cosmos.sh slash.sh`.
 10. Crontab'ı düzenleyin (1 numaralı seçeneği seçiyoruz); `crontab -e`.
-> `crontab.ornek` repolarda bulabilirsiniz.
+> Bu depoda `crontab.ornek` dosyasını bulabilirsiniz.
 11. Günlüklerinizi `cat $HOME/status/cosmos.log` veya `tail $HOME/status/cosmos.log -f` ile kontrol edebilirsiniz.
