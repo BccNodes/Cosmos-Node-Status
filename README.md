@@ -7,7 +7,7 @@ Talimatlar:
 
 1. `@BotFather` ile telegram botu oluşturun, özelleştirin ve `get bot API token` ([nasıl yapılacağını bilmiyorsanız](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token)).
 
-2.En az 2 grup oluşturun: `alarm` and `log`. Bunları özelleştirin, botunuzu sohbetlerinize ekleyin ve `get chats IDs` ([nasıl yapılacağını bilmiyorsanız](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)).
+2.En az 2 grup oluşturun: `alarm` and `log` (isterseniz alarm ve log için aynı telegram botunu kullanabilirsiniz). Bunları özelleştirin, botunuzu sohbetlerinize ekleyin ve `get chats IDs` ([nasıl yapılacağını bilmiyorsanız](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)).
 
 3. Sunucunuza bağlanın ve `mkdir $HOME/status/` ile `status` klasörü oluşturun.
 
