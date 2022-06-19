@@ -1,17 +1,17 @@
 #!/bin/bash
 
 function __sendFunc() {
-    # print 'TEXT' into 'cosmos.log' for the sake of history
+    # 'METİN'i tarih adına 'cosmos.log' dosyasına yazdırın
     echo -e ${TEXT}
 
-    # add new text to the 'MESSAGE', which will be sent as 'log' or 'alarm'
-    # if 'SEND' == 1, it becomes 'alarm', otherwise it's 'log'
+    # 'MESAJ'a 'günlük' veya 'alarm' olarak gönderilecek yeni metin ekleyin
+    # 'GÖNDER' == 1 ise, 'alarm' olur, aksi takdirde 'günlük' olur
     MESSAGE=${MESSAGE}'<code>'${TEXT}'</code>\n'
 }
 
 function __getLastChainBlockFunc() {
 
-    # get the last explorer block
+    # güncel gezgin bloğunu al
     if [[ ${CURL} == *"v1/status"* ]]
     then
         LATEST_CHAIN_BLOCK=$(curl -sk ${CURL} | jq ".block_height" | tr -d '"')
@@ -31,7 +31,7 @@ function __getLastChainBlockFunc() {
 
 function __getSignedAndMissedBlocksFunc() {
 
-    # get slashing params
+    # eğik paramlar al
     SLASHING=$(${COSMOS} q slashing params -o json --node ${NODE} --home ${NODE_HOME})
     WINDOW=$(echo $SLASHING | jq ".signed_blocks_window" | tr -d '"')
     MIN_SIGNED=$(echo $SLASHING | jq ".min_signed_per_window" | tr -d '"')
@@ -39,7 +39,7 @@ function __getSignedAndMissedBlocksFunc() {
     JAILED_AFTER=$(echo ${WINDOW}*${MIN_SIGNED} | bc -l | grep -oE "[0-9]*" | awk 'NR==1 {print; exit}')
     MISSED_BLOCKS_FOR_ALARM=$(echo ${JAILED_AFTER}/10 | bc -l | grep -oE "[0-9]*" | awk 'NR==1 {print; exit}')
 
-    # get some info about node
+    # düğüm hakkında biraz bilgi alın
     NODE_STATUS_TOTAL=$(curl -s localhost:${PORT}/status)
 
     VALIDATOR_ADDRESS=$(echo $NODE_STATUS_TOTAL | jq .result.validator_info.address | tr -d '"')
@@ -57,15 +57,15 @@ function __getSignedAndMissedBlocksFunc() {
     START_BLOCK=$(($LATEST_BLOCK_HEIGHT-$LOOKBEHIND_BLOCKS+1))
     for (( BLOCK = $START_BLOCK; BLOCK <= $LATEST_BLOCK_HEIGHT; BLOCK++ ))
     do
-        # check for validator signature
+        # doğrulayıcı imzasını kontrol edin
         SIGNATURE=$(curl -s localhost:${PORT}/block?height=${BLOCK} | jq .result.block.last_commit.signatures[].validator_address | tr -d '"' | grep ${VALIDATOR_ADDRESS})
 
-        # if signature exists > signed + 1
+        # imza varsa > imzalı + 1
         if [[ ${SIGNATURE} != "" ]]; then
             MISSED_IN_A_ROW=0
             ((SIGNED=SIGNED+1))
 
-        # if signature does not exist > missed + 1
+        # imza yoksa > cevapsız + 1
         else
             ((MISSED_IN_A_ROW=MISSED_IN_A_ROW+1))
             ((MISSED=MISSED+1))
@@ -73,7 +73,7 @@ function __getSignedAndMissedBlocksFunc() {
         fi
     done
 
-    # if missed more than 10% of allowed missed blocks before jail > alarm
+    # hapisten önce izin verilen cevapsız blokların %10'undan fazlasını kaçırırsa > alarm
     if (( ${MISSED} > ${MISSED_BLOCKS_FOR_ALARM}))
     then
         SEND=1
