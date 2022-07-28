@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # alarm değil, günlük mesajları için sohbet kimliği
-CHAT_ID_LOG="-XXXXX"
+CHAT_ID_LOG="1179521599"
 
 # bot jetonu
-BOT_TOKEN="228322:xxx-xxx_xxx"
+BOT_TOKEN="5530737635:AAGfqe1OhvkufL9EVrlfvaBo9BlTUTAsNV8"
 
 MESSAGE="<code>/// $(date '+%F %T') ///</code>"
 
