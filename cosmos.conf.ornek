@@ -2,28 +2,28 @@
 MONIKER="berkcaNode"
 
 # Doğrulayıcı adresiniz
-VALIDATOR_ADDRESS="XXXXXXXXXXXXXXXXXXXXXXXXXX"
+VALIDATOR_ADDRESS="stridevaloper1tfp47fws4rlkpm3dvehfa6l3mxwm2n3a4veux4"
 
 # Log için proje adını giriniz.
-PROJECT="KUJIRA"
+PROJECT="Stride"
 
 # örnek: maksimum aktif doğrulayıcı grubu 200 ise, doğrulayıcınız 191. olduğunda bir alarm alırsınız, devre dışı bırakmak için 0'ı ayarlayın
 POSITION_ALARM="10"
 
 # jeton ismi
-TOKEN="ukuji"
+TOKEN="STRD"
 
 # null sayısı
 DENOM="1000000"
 
 # bin yolu
-COSMOS="/root/go/bin/kujirad"
+COSMOS="/usr/local/bin/strided"
 
 # yapılandırma klasörüne giden yol
-CONFIG="/root/.kujira/config/"
+CONFIG="/root/.stride/config/"
 
 # explorer API'sine bağlantı, curl.md'ye gidin ve durumunuz için bağlantıyı bulun
-CURL="https://kujira.api.explorers.guru/api/blocks/latest"
+CURL="https://stride.api.explorers.guru/api/blocks/latest"
 
 # bildirim etkinleştirilmiş alarm mesajları için sohbet kimliği
 CHAT_ID_ALARM="1179521599"
